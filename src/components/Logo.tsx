@@ -53,30 +53,22 @@ export function Logo({
   const handleClick = () => {
     if (!clickable) return;
     
+    // Sempre navegar para a página principal
+    navigate('/');
+    
+    // Se há uma seção para scroll, fazer scroll após navegação
     if (scrollToSection) {
-      // Se estamos na home, scroll para a seção
-      if (window.location.pathname === '/') {
+      setTimeout(() => {
         const element = document.getElementById(scrollToSection);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      } else {
-        // Se estamos em outra página, navegar para home e depois scroll
-        navigate('/' + (scrollToSection ? `#${scrollToSection}` : ''));
-        setTimeout(() => {
-          const element = document.getElementById(scrollToSection);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      }
+      }, 100);
     } else {
-      // Navegar para home
-      if (window.location.pathname === '/') {
+      // Se não há seção, scroll para o topo
+      setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        navigate('/');
-      }
+      }, 100);
     }
   };
 

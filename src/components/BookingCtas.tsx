@@ -21,7 +21,7 @@ export function BookingCtas({ variant = 'primary', className = '' }: BookingCtas
             : 'bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition-all text-sm'
         } text-center font-medium inline-block whitespace-nowrap`}
       >
-        Agendar via Zappy
+        Agendar Agora
       </a>
     </div>
   );

@@ -117,15 +117,6 @@ export function Footer() {
             <ul className="space-y-2 md:space-y-3">
               <li>
                 <button 
-                  onClick={() => handleNavigation('/', 'hero')} 
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm md:text-base"
-                >
-                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
-                  Início
-                </button>
-              </li>
-              <li>
-                <button 
                   onClick={() => handleNavigation('/', 'servicos')} 
                   className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm md:text-base"
                 >
@@ -155,18 +146,6 @@ export function Footer() {
                 >
                   <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
                   Galeria
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    navigate('/elogios');
-                    window.scrollTo(0, 0);
-                  }} 
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm md:text-base"
-                >
-                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
-                  Elogios
                 </button>
               </li>
               <li>
@@ -293,12 +272,26 @@ export function Footer() {
               © {new Date().getFullYear()} Vitorias Beauty. Todos os direitos reservados.
             </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: Adicionar link para Política de Privacidade quando disponível
+                }}
+                className="text-gray-400 hover:text-pink-400 transition-colors cursor-pointer"
+                aria-label="Política de Privacidade"
+              >
                 Política de Privacidade
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+              </button>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: Adicionar link para Termos e Condições quando disponível
+                }}
+                className="text-gray-400 hover:text-pink-400 transition-colors cursor-pointer"
+                aria-label="Termos e Condições"
+              >
                 Termos e Condições
-              </a>
+              </button>
               <a 
                 href="https://www.livroreclamacoes.pt/" 
                 target="_blank" 

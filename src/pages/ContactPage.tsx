@@ -12,17 +12,7 @@ export function ContactPage() {
         url="https://vitoriasbeauty.pt/#/contacto"
       />
       <Header />
-      <main className="pt-24">
-        <section className="py-12 px-4">
-          <div className="container mx-auto max-w-4xl text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Contactos e horários
-            </h1>
-            <p className="text-gray-300 text-lg">
-              Estamos em três localizações em Lisboa. Entre em contacto e faça a sua marcação.
-            </p>
-          </div>
-        </section>
+      <main className="pt-32 md:pt-40">
         <ContactSection />
       </main>
       <Footer />

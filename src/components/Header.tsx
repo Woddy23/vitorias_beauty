@@ -74,13 +74,6 @@ export function Header() {
         <div className="flex md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-between h-24 gap-4">
           {/* Left Navigation - Desktop */}
           <nav className="hidden md:flex items-center justify-end gap-10 pr-8">
-            <button 
-              onClick={() => handleNavigation('/', 'hero')}
-              className="text-gray-300 hover:text-pink-400 transition-colors"
-            >
-              Início
-            </button>
-            
             {/* Services Dropdown */}
             <div 
               className="relative"
@@ -124,6 +117,13 @@ export function Header() {
             >
               Galeria
             </button>
+            
+            <button 
+              onClick={() => { navigate('/sobre'); setIsServicesOpen(false); }}
+              className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
+            >
+              Sobre Nós
+            </button>
           </nav>
 
           {/* Logo - Center on desktop, left on mobile */}
@@ -131,7 +131,6 @@ export function Header() {
             <Logo 
               size="md"
               clickable={true}
-              scrollToSection="hero"
               className="w-auto"
             />
           </div>
@@ -139,10 +138,10 @@ export function Header() {
           {/* Right Navigation - Desktop */}
           <nav className="hidden md:flex items-center justify-start gap-10 pl-8">
             <button 
-              onClick={() => navigate('/sobre')}
+              onClick={() => { navigate('/contacto'); setIsServicesOpen(false); }}
               className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
             >
-              Sobre Nós
+              Contacto
             </button>
             <a 
               href="https://www.miss-shampoo.pt/"
@@ -173,13 +172,6 @@ export function Header() {
                 Navegue pelas diferentes seções do Vitorias Beauty
               </SheetDescription>
               <nav className="flex flex-col gap-6 mt-8 px-4">
-                <button 
-                  onClick={() => handleNavigation('/', 'hero')}
-                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
-                >
-                  Início
-                </button>
-                
                 {/* Mobile Services Dropdown */}
                 <div>
                   <button 
@@ -213,6 +205,12 @@ export function Header() {
                   className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
                 >
                   Galeria
+                </button>
+                <button 
+                  onClick={() => { navigate('/contacto'); setIsMenuOpen(false); }}
+                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
+                >
+                  Contacto
                 </button>
                 <button 
                   onClick={() => { navigate('/sobre'); setIsMenuOpen(false); }}

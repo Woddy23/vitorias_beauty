@@ -1,10 +1,11 @@
+import React from 'react';
 import { Header } from '../components/Header';
 import { HeroSection } from '../components/HeroSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { AboutSection } from '../components/AboutSection';
 import { GallerySection } from '../components/GallerySection';
-import { TestimonialsSection } from '../components/TestimonialsSection';
 import { ContactSection } from '../components/ContactSection';
+import { AppDownloadSection } from '../components/AppDownloadSection';
 import { Footer } from '../components/Footer';
 import { PromotionPopup } from '../components/PromotionPopup';
 import { SocialMediaPopup } from '../components/SocialMediaPopup';
@@ -25,7 +26,7 @@ export function HomePage() {
         <ServicesSection />
         <AboutSection />
         <GallerySection />
-        <TestimonialsSection />
+        <AppDownloadSection />
         <ContactSection />
       </main>
       <Footer />
