@@ -5,6 +5,7 @@ import { InfiniteCarousel } from '../components/InfiniteCarousel';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Sparkles, Heart, Clock, Shield, DollarSign, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import lorealLogo from 'figma:asset/2d6ff77f206a6de9836f1aba65ba125eb9bb23ff.png';
 import andreiaLogo from 'figma:asset/fcce27b5c1a48a193db67066837c2ab374a72a60.png';
 import alfarparfLogo from 'figma:asset/1d49874d95f3f87f997ef822341569c437cf0806.png';
@@ -40,6 +41,12 @@ export function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Sobre Nós - Vitorias Beauty | Salão de Beleza em Lisboa desde 2014"
+        description="Conheça a história do Vitorias Beauty. Salão de beleza em Lisboa com mais de 10 anos de experiência. Profissionais qualificados e produtos de qualidade."
+        keywords="sobre Vitorias Beauty, história salão beleza Lisboa, profissionais qualificados Lisboa, salão beleza desde 2014"
+        url="https://vitoriasbeauty.pt/#/sobre"
+      />
       <Header />
       
       {/* Hero Section */}
@@ -49,8 +56,9 @@ export function AboutPage() {
           <div className="absolute inset-0">
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1757940113920-69e3686438d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzcGElMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjEzNjU3MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Vitoria's Beauty"
+              alt="Vitorias Beauty"
               className="w-full h-full object-cover"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gray-900/75"></div>
           </div>
@@ -332,7 +340,7 @@ export function AboutPage() {
           <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-12 border border-gray-700/50">
             <h3 className="text-white mb-4">Pronta para uma experiência única?</h3>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Descubra por que mais de 2.100 clientes confiam no Vitoria's Beauty para os seus cuidados de beleza.
+              Descubra por que mais de 2.100 clientes confiam no Vitorias Beauty para os seus cuidados de beleza.
             </p>
             <a 
               href="https://you.zappysoftware.com/vitoriasbeauty"

@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer';
 import { Sparkles, Scissors, Users, Check, Droplets, Palette, Waves, Sparkle } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
 
 export function CabeloPage() {
   const [activeCategory, setActiveCategory] = useState('alisamento');
@@ -75,6 +76,12 @@ export function CabeloPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Serviços de Cabelo - Vitorias Beauty | Cortes, Coloração, Alisamento"
+        description="Serviços profissionais de cabeleireiro em Lisboa. Cortes, coloração, alisamento, madeixas, penteados e tratamentos capilares. Produtos L'Oréal, Andreia e Alfaparf."
+        keywords="cabeleireiro Lisboa, corte cabelo Lisboa, coloração cabelo Lisboa, alisamento Lisboa, madeixas Lisboa, penteados Lisboa, tratamento capilar Lisboa"
+        url="https://vitoriasbeauty.pt/#/servicos/cabelo"
+      />
       <Header />
       
       {/* Hero Section */}

@@ -4,6 +4,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 
 const galleryImages = [
   'https://images.unsplash.com/photo-1758798261207-7039105e8195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoYWlyJTIwY29sb3J8ZW58MXx8fHwxNzYxNDM5MjA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
@@ -52,6 +54,12 @@ export function ColoracaoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Coloração de Cabelo - Vitorias Beauty | Lisboa"
+        description="Coloração profissional de cabelo em Lisboa. Produtos L'Oréal INOA. Resultados duradouros e cabelo saudável."
+        keywords="coloração cabelo Lisboa, coloração L'Oréal Lisboa, coloração profissional Lisboa"
+        url="https://vitoriasbeauty.pt/#/coloracao"
+      />
       <Header />
       
       <section className="pt-32 pb-12 px-4">
@@ -127,7 +135,7 @@ export function ColoracaoPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all shadow-lg shadow-pink-500/30"
               >
                 Fazer Marcação

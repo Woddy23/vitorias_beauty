@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Users, Scissors, Sparkles, HandHeart, Palette } from 'lucide-react';
 import { useEffect } from 'react';
+import { SEO } from '../components/SEO';
 
 export function TeamPage() {
   useEffect(() => {
@@ -218,6 +219,12 @@ export function TeamPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Nossa Equipa - Vitorias Beauty | Profissionais Qualificados"
+        description="Conheça a equipa do Vitorias Beauty. Profissionais qualificados em cabeleireiro, estética, manicure e maquilhagem. Formação contínua para melhor servir."
+        keywords="equipa Vitorias Beauty, profissionais salão beleza Lisboa, cabeleireiros Lisboa, esteticistas Lisboa"
+        url="https://vitoriasbeauty.pt/#/equipa"
+      />
       <Header />
       
       {/* Hero Section */}

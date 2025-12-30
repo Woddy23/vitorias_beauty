@@ -2,6 +2,7 @@ import {
   HashRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { CabeloPage } from "./pages/CabeloPage";
@@ -18,6 +19,11 @@ import { MadeixasPage } from "./pages/MadeixasPage";
 import { ColoracaoPage } from "./pages/ColoracaoPage";
 import { MakeupGalleryPage } from "./pages/MakeupGalleryPage";
 import { HairLaminationPage } from "./pages/HairLaminationPage";
+import { ContactPage } from "./pages/ContactPage";
+import { ElogiosPage } from "./pages/ElogiosPage";
+import { ParqueNacoesPage } from "./pages/ParqueNacoesPage";
+import { SaldanhaPage } from "./pages/SaldanhaPage";
+import { PortelaLRSPage } from "./pages/PortelaLRSPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ScrollToTopButton } from "./components/ScrollToTopButton";
 
@@ -29,7 +35,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sobre" element={<AboutPage />} />
+        <Route path="/sobre-nos" element={<Navigate to="/sobre" replace />} />
         <Route path="/galeria" element={<GalleryPage />} />
+        <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/elogios" element={<ElogiosPage />} />
+        <Route path="/parque-nacoes" element={<ParqueNacoesPage />} />
+        <Route path="/saldanha" element={<SaldanhaPage />} />
+        <Route path="/portela-lrs" element={<PortelaLRSPage />} />
+        <Route path="/cabelo" element={<Navigate to="/servicos/cabelo" replace />} />
         <Route
           path="/alisamento"
           element={<AlisamentoPage />}

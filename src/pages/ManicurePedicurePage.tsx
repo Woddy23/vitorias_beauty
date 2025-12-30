@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer';
 import { Check } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
 
 export function ManicurePedicurePage() {
   const [activeCategory, setActiveCategory] = useState('unhas');
@@ -59,6 +60,12 @@ export function ManicurePedicurePage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Manicure e Pedicure - Vitorias Beauty | Unhas Gel e Nail Art Lisboa"
+        description="Serviços completos de manicure e pedicure em Lisboa. Unhas gel, unhas acrílico, verniz gel, nail art e tratamento de micose com laser. Cuidados profissionais para mãos e pés."
+        keywords="manicure Lisboa, pedicure Lisboa, unhas gel Lisboa, nail art Lisboa, unhas acrílico Lisboa, verniz gel Lisboa"
+        url="https://vitoriasbeauty.pt/#/servicos/manicure-pedicure"
+      />
       <Header />
       
       {/* Hero Section */}

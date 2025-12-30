@@ -4,6 +4,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 
 // 24 images for the gallery (2 per square)
 const galleryImages = [
@@ -54,6 +56,12 @@ export function PenteadosPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Penteados - Vitorias Beauty | Penteados Profissionais Lisboa"
+        description="Penteados profissionais em Lisboa para eventos, noivas e ocasiões especiais. Estilistas experientes criam penteados elegantes e duradouros."
+        keywords="penteados Lisboa, penteados noiva Lisboa, penteados eventos Lisboa, penteado profissional Lisboa"
+        url="https://vitoriasbeauty.pt/#/penteados"
+      />
       <Header />
       
       <section className="pt-32 pb-12 px-4">
@@ -129,7 +137,7 @@ export function PenteadosPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all shadow-lg shadow-cyan-500/30"
               >
                 Fazer Marcação

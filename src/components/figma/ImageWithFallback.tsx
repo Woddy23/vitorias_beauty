@@ -10,7 +10,11 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
     setDidError(true)
   }
 
-  const { src, alt, style, className, ...rest } = props
+  const { src, alt, style, className, loading, ...rest } = props
+  
+  // Se loading não for especificado, usar "lazy" por padrão
+  // Mas permitir override para imagens críticas (hero) com loading="eager"
+  const imageLoading = loading !== undefined ? loading : 'lazy'
 
   return didError ? (
     <div
@@ -18,10 +22,10 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       style={style}
     >
       <div className="flex items-center justify-center w-full h-full">
-        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={src} />
+        <img src={ERROR_IMG_SRC} alt="Error loading image" loading={imageLoading} {...rest} data-original-url={src} />
       </div>
     </div>
   ) : (
-    <img src={src} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <img src={src} alt={alt} className={className} style={style} loading={imageLoading} {...rest} onError={handleError} />
   )
 }

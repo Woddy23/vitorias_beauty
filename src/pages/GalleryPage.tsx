@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { SEO } from '../components/SEO';
 
 interface GalleryCategory {
   id: string;
@@ -74,6 +75,12 @@ export function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Galeria - Vitorias Beauty | Trabalhos Realizados"
+        description="Galeria de trabalhos realizados no Vitorias Beauty. Veja exemplos de cortes, colorações, alisamentos, penteados, manicure e maquilhagem realizados pelos nossos profissionais."
+        keywords="galeria Vitorias Beauty, trabalhos salão beleza Lisboa, exemplos cortes cabelo, exemplos maquilhagem Lisboa"
+        url="https://vitoriasbeauty.pt/#/galeria"
+      />
       <Header />
       
       {/* Hero Section */}

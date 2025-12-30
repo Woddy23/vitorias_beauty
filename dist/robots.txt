@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vitoriasbeauty.pt/sitemap.xml
+
+# Disallow hash routes (opcional - comentado para permitir indexação)
+# Disallow: /#/
+

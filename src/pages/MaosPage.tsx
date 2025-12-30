@@ -4,6 +4,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 
 // 24 images for the gallery (2 per square)
 const galleryImages = [
@@ -54,6 +56,12 @@ export function MaosPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Manicure - Vitorias Beauty | Unhas e Nail Art Lisboa"
+        description="Serviços de manicure em Lisboa. Unhas gel, unhas acrílico, verniz gel e nail art. Cuidados profissionais para mãos bonitas e elegantes."
+        keywords="manicure Lisboa, unhas gel Lisboa, nail art Lisboa, manicure profissional Lisboa"
+        url="https://vitoriasbeauty.pt/#/maos"
+      />
       <Header />
       
       <section className="pt-32 pb-12 px-4">
@@ -129,7 +137,7 @@ export function MaosPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all shadow-lg shadow-pink-500/30"
               >
                 Fazer Marcação

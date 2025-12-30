@@ -1,5 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { CountUpAnimation } from './CountUpAnimation';
+import { BookingCtas } from './BookingCtas';
 
 export function HeroSection() {
   return (
@@ -8,8 +9,9 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
           src="https://images.unsplash.com/photo-1626383137804-ff908d2753a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzYWxvbiUyMGludGVyaW9yfGVufDF8fHx8MTc2MDg1NDEzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Vitoria's Beauty Interior"
+          alt="Vitorias Beauty Interior"
           className="w-full h-full object-cover"
+          loading="eager"
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gray-900/80"></div>
@@ -27,25 +29,23 @@ export function HeroSection() {
             </span>
           </div>
           
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 text-white">
+            Vitorias Beauty
+          </h1>
+          
           <p className="mb-8 md:mb-10 text-gray-300 px-4 max-w-2xl mx-auto leading-relaxed">
             Transformamos o seu visual com serviços premium de cabeleireiro e estética. 
             Experimente a excelência em cada detalhe.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
-              className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-4 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all shadow-lg shadow-pink-500/30"
-            >
-              Fazer Marcação
-            </button>
-            <button 
-              onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-cyan-500 text-cyan-400 px-8 py-4 rounded-full hover:bg-cyan-500/10 transition-all"
-            >
-              Ver Serviços
-            </button>
-          </div>
+          <BookingCtas variant="primary" className="mb-6" />
+
+          <button 
+            onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
+            className="border-2 border-cyan-500 text-cyan-400 px-8 py-4 rounded-full hover:bg-cyan-500/10 transition-all"
+          >
+            Ver Serviços
+          </button>
 
           {/* Stats with animation */}
           <div className="grid grid-cols-3 md:flex md:flex-row items-center justify-center gap-6 md:gap-16 mt-12 md:mt-16 max-w-3xl mx-auto">

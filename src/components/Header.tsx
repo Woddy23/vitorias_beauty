@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logoImage from 'figma:asset/51fd73e2d92324fded4f3834fe80e72d6131ba18.png';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from './ui/sheet';
+import { openExternalUrl } from '../utils/security';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -123,13 +124,25 @@ export function Header() {
             >
               Galeria
             </button>
+            <button 
+              onClick={() => { navigate('/elogios'); setIsServicesOpen(false); }}
+              className="text-gray-300 hover:text-pink-400 transition-colors"
+            >
+              Elogios
+            </button>
+            <button 
+              onClick={() => { navigate('/contacto'); setIsServicesOpen(false); }}
+              className="text-gray-300 hover:text-pink-400 transition-colors"
+            >
+              Contacto
+            </button>
           </nav>
 
           {/* Logo - Center on desktop, left on mobile */}
           <div className="flex items-center justify-start md:justify-center md:px-8">
             <img 
               src={logoImage} 
-              alt="Vitoria's Beauty" 
+              alt="Vitorias Beauty" 
               className="h-14 md:h-16 w-auto cursor-pointer"
               onClick={() => handleNavigation('/', 'hero')}
             />
@@ -143,6 +156,18 @@ export function Header() {
             >
               Sobre Nós
             </button>
+            <button 
+              onClick={() => navigate('/elogios')}
+              className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
+            >
+              Elogios
+            </button>
+            <button 
+              onClick={() => navigate('/contacto')}
+              className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
+            >
+              Contacto
+            </button>
             <a 
               href="https://www.miss-shampoo.pt/"
               target="_blank"
@@ -152,7 +177,7 @@ export function Header() {
               Loja Online
             </a>
             <button 
-              onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+              onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
               className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-2.5 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all shadow-lg shadow-pink-500/30 whitespace-nowrap"
             >
               Agende Agora
@@ -169,7 +194,7 @@ export function Header() {
             <SheetContent side="right" className="bg-gray-900/95 backdrop-blur-md border-gray-800 w-[280px] sm:w-[320px]">
               <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
               <SheetDescription className="sr-only">
-                Navegue pelas diferentes seções do Vitoria's Beauty
+                Navegue pelas diferentes seções do Vitorias Beauty
               </SheetDescription>
               <nav className="flex flex-col gap-6 mt-8 px-4">
                 <button 
@@ -214,6 +239,18 @@ export function Header() {
                   Galeria
                 </button>
                 <button 
+                  onClick={() => { navigate('/elogios'); setIsMenuOpen(false); }}
+                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
+                >
+                  Elogios
+                </button>
+                <button 
+                  onClick={() => { navigate('/contacto'); setIsMenuOpen(false); }}
+                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
+                >
+                  Contacto
+                </button>
+                <button 
                   onClick={() => { navigate('/sobre'); setIsMenuOpen(false); }}
                   className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
                 >
@@ -228,7 +265,7 @@ export function Header() {
                   Loja Online
                 </a>
                 <button 
-                  onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                  onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                   className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all mt-4"
                 >
                   Agende Agora

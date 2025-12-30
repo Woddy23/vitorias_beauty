@@ -1,5 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState, useRef, useEffect } from 'react';
+import { BookingCtas } from './BookingCtas';
 import parqueImage1 from 'figma:asset/926e634aa304cebd6190799c1b1d573197ad12a2.png';
 import parqueImage2 from 'figma:asset/1783e45c444c413fae233e978acb83f156669095.png';
 import parqueImage3 from 'figma:asset/4460826bb478d41ea8be1411b8dc4ee1a80fac52.png';
@@ -139,7 +140,7 @@ export function ContactSection() {
         portelaImage5,
       ],
       address: 'Rot. Nuno Rodrigues Santos, 2',
-      address2: 'Centro Com. Portela, lojas 1 e 1º',
+      address2: 'Centro Com. Portela, lojas 38 e 39 – 1º andar',
       address3: '2685-223 Portela LRS',
       hours: 'Aberto todos os dias das 08h00 às 20h00',
       phone: '219 431 654',
@@ -187,9 +188,10 @@ export function ContactSection() {
           <h2 className="mb-4 text-white">
             Vamos Começar a Sua Transformação
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto mb-6">
             Estamos ansiosos para recebê-la. Entre em contacto e faça a sua marcação.
           </p>
+          <BookingCtas variant="compact" />
         </div>
 
         {/* Location Cards */}

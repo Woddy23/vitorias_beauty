@@ -48,7 +48,7 @@ export function Footer() {
         <div className="mb-8 md:mb-12 md:hidden">
           <img 
             src={logoImage} 
-            alt="Vitoria's Beauty" 
+            alt="Vitorias Beauty" 
             className="h-16 w-auto mb-6"
           />
           <p className="text-gray-400 mb-6 leading-relaxed">
@@ -81,7 +81,7 @@ export function Footer() {
           <div className="hidden md:block">
             <img 
               src={logoImage} 
-              alt="Vitoria's Beauty" 
+              alt="Vitorias Beauty" 
               className="h-16 w-auto mb-6"
             />
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -160,6 +160,30 @@ export function Footer() {
               <li>
                 <button 
                   onClick={() => {
+                    navigate('/elogios');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm md:text-base"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Elogios
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/contacto');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm md:text-base"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Contacto
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
                     navigate('/sobre');
                     window.scrollTo(0, 0);
                   }} 
@@ -184,23 +208,51 @@ export function Footer() {
               Os Nossos Salões
             </h4>
             <ul className="space-y-3 md:space-y-4">
-              {locations.map((location, index) => (
-                <li key={index} className="group">
-                  <button 
-                    onClick={() => handleNavigation('/', 'contato')}
-                    className="flex items-start gap-1.5 md:gap-2 mb-1 w-full text-left"
-                  >
-                    <MapPin className="w-3 h-3 md:w-4 md:h-4 text-pink-400 mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-white group-hover:text-pink-400 transition-colors text-sm md:text-base leading-tight">{location.name}</p>
-                  </button>
-                  <div className="flex items-center gap-1.5 md:gap-2 ml-4 md:ml-6 text-gray-400 text-xs md:text-sm">
-                    <Phone className="w-3 h-3" />
-                    <a href={`tel:${location.phone.replace(/\s/g, '')}`} className="hover:text-cyan-400 transition-colors">
-                      {location.phone}
-                    </a>
-                  </div>
-                </li>
-              ))}
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/parque-nacoes'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 md:gap-2 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 md:w-4 md:h-4 text-pink-400 mt-0.5 md:mt-1 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm md:text-base leading-tight">Parque das Nações</p>
+                </button>
+                <div className="flex items-center gap-1.5 md:gap-2 ml-4 md:ml-6 text-gray-400 text-xs md:text-sm">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351218958421" className="hover:text-cyan-400 transition-colors">
+                    +351 218 958 421
+                  </a>
+                </div>
+              </li>
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/saldanha'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 md:gap-2 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 md:w-4 md:h-4 text-pink-400 mt-0.5 md:mt-1 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm md:text-base leading-tight">Saldanha</p>
+                </button>
+                <div className="flex items-center gap-1.5 md:gap-2 ml-4 md:ml-6 text-gray-400 text-xs md:text-sm">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351210987604" className="hover:text-cyan-400 transition-colors">
+                    +351 210 987 604
+                  </a>
+                </div>
+              </li>
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/portela-lrs'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 md:gap-2 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 md:w-4 md:h-4 text-pink-400 mt-0.5 md:mt-1 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm md:text-base leading-tight">Portela LRS</p>
+                </button>
+                <div className="flex items-center gap-1.5 md:gap-2 ml-4 md:ml-6 text-gray-400 text-xs md:text-sm">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351219431654" className="hover:text-cyan-400 transition-colors">
+                    +351 219 431 654
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -238,7 +290,7 @@ export function Footer() {
         <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-xs md:text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Vitoria's Beauty. Todos os direitos reservados.
+              © {new Date().getFullYear()} Vitorias Beauty. Todos os direitos reservados.
             </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
               <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">

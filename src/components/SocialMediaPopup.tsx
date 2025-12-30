@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Heart, Instagram, Facebook } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { openExternalUrl } from '../utils/security';
 
 export function SocialMediaPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ export function SocialMediaPopup() {
   };
 
   const handleSocialClick = (url: string) => {
-    window.open(url, '_blank');
+    openExternalUrl(url);
     setIsOpen(false);
   };
 
@@ -124,7 +125,7 @@ export function SocialMediaPopup() {
                   </div>
                   <div className="flex-1 text-left">
                     <div className="text-white">Facebook</div>
-                    <div className="text-gray-400 text-sm">Vitoria's Beauty</div>
+                    <div className="text-gray-400 text-sm">Vitorias Beauty</div>
                   </div>
                   <div className="text-cyan-400 text-2xl group-hover:translate-x-1 transition-transform">→</div>
                 </div>

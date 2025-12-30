@@ -4,6 +4,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 
 const galleryImages = [
   'https://images.unsplash.com/photo-1600637070413-0798fafbb6c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYWtldXAlMjBhcnRpc3R8ZW58MXx8fHwxNzYxMzk3MTUwfDA&ixlib=rb-4.1.0&q=80&w=1080',
@@ -52,6 +54,12 @@ export function MakeupGalleryPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Galeria de Maquilhagem - Vitorias Beauty | Makeup Artist Lisboa"
+        description="Galeria de trabalhos de maquilhagem realizados no Vitorias Beauty. Veja exemplos de maquilhagem para eventos, noivas e ocasiões especiais."
+        keywords="galeria maquilhagem Lisboa, makeup artist Lisboa, exemplos maquilhagem Lisboa"
+        url="https://vitoriasbeauty.pt/#/makeup-galeria"
+      />
       <Header />
       
       <section className="pt-32 pb-12 px-4">
@@ -127,7 +135,7 @@ export function MakeupGalleryPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all shadow-lg shadow-cyan-500/30"
               >
                 Fazer Marcação

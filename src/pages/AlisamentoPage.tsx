@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 import alisamentoImg1 from 'figma:asset/d5ee53bc9340d2c8d13ada3e1e4d633f7421a661.png';
 import alisamentoImg2 from 'figma:asset/0553fdc2135dcbb97b6830843c1c52bd5b730e5a.png';
 import alisamentoImg3 from 'figma:asset/dbb57a9067ca1eb10aeb89be2d2e29626e066bc1.png';
@@ -29,6 +31,12 @@ export function AlisamentoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Alisamento de Cabelo - Vitorias Beauty | Lisboa"
+        description="Serviço de alisamento de cabelo em Lisboa. Técnicas profissionais com produtos L'Oréal e Alfaparf. Resultados duradouros e cabelo saudável."
+        keywords="alisamento cabelo Lisboa, alisamento profissional Lisboa, alisamento L'Oréal Lisboa"
+        url="https://vitoriasbeauty.pt/#/alisamento"
+      />
       <Header />
       
       {/* Hero Section */}
@@ -95,7 +103,7 @@ export function AlisamentoPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all shadow-lg shadow-pink-500/30"
               >
                 Fazer Marcação

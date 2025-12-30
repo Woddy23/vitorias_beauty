@@ -2,6 +2,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Palette, Check } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { SEO } from '../components/SEO';
 
 export function MakeupPage() {
 
@@ -16,6 +17,12 @@ export function MakeupPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Maquilhagem Profissional - Vitorias Beauty | Makeup Artist Lisboa"
+        description="Serviços de maquilhagem profissional em Lisboa. Maquilhagem para eventos, noivas e ocasiões especiais. Profissionais qualificados com produtos de qualidade."
+        keywords="maquilhagem Lisboa, makeup artist Lisboa, maquilhagem noiva Lisboa, maquilhagem eventos Lisboa, makeup profissional Lisboa"
+        url="https://vitoriasbeauty.pt/#/servicos/makeup"
+      />
       <Header />
       
       {/* Hero Section */}

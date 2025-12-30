@@ -13,8 +13,9 @@ export function AboutSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-pink-500/30">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1635080472002-ca760a070e37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0JTIwYmVhdXR5fGVufDF8fHx8MTc2MDkwODYzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Vitoria's Beauty"
+                alt="Vitorias Beauty"
                 className="w-full h-[500px] object-cover"
+                loading="eager"
               />
             </div>
             {/* Floating badge */}
@@ -40,7 +41,7 @@ export function AboutSection() {
             </h2>
 
             <p className="text-gray-300 mb-6">
-              O Vitoria's Beauty é mais do que um salão de beleza - é um refúgio onde a elegância 
+              O Vitorias Beauty é mais do que um salão de beleza - é um refúgio onde a elegância 
               encontra a inovação. Com anos de experiência no setor, oferecemos serviços de cabeleireiro 
               e estética que transformam e realçam a sua beleza natural.
             </p>

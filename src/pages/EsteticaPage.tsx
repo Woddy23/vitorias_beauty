@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer';
 import { Sparkles } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
+import { SEO } from '../components/SEO';
 
 export function EsteticaPage() {
   const [activeCategory, setActiveCategory] = useState('depilacao-cera');
@@ -68,6 +69,12 @@ export function EsteticaPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <SEO 
+        title="Estética - Vitorias Beauty | Depilação e Tratamentos Faciais Lisboa"
+        description="Serviços de estética em Lisboa. Depilação com cera e linha, tratamentos faciais, limpeza de pele e tratamentos corporais. Profissionais qualificados."
+        keywords="estética Lisboa, depilação Lisboa, depilação cera Lisboa, tratamento facial Lisboa, limpeza pele Lisboa, estética profissional Lisboa"
+        url="https://vitoriasbeauty.pt/#/servicos/estetica"
+      />
       <Header />
       
       {/* Hero Section */}

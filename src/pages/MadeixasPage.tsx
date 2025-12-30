@@ -4,6 +4,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, X } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { openExternalUrl } from '../utils/security';
 
 const galleryImages = [
   'https://images.unsplash.com/photo-1597993866297-92b8acff41d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYWlyJTIwaGlnaGxpZ2h0cyUyMGJhbGF5YWdlfGVufDF8fHx8MTc2MTQxNDE5NXww&ixlib=rb-4.1.0&q=80&w=1080',
@@ -52,6 +54,12 @@ export function MadeixasPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <SEO 
+        title="Madeixas - Vitorias Beauty | Madeixas e Highlights Lisboa"
+        description="Serviços de madeixas e highlights em Lisboa. Técnicas profissionais de coloração. Resultados naturais e elegantes."
+        keywords="madeixas Lisboa, highlights Lisboa, balayage Lisboa, coloração cabelo Lisboa"
+        url="https://vitoriasbeauty.pt/#/madeixas"
+      />
       <Header />
       
       <section className="pt-32 pb-12 px-4">
@@ -127,7 +135,7 @@ export function MadeixasPage() {
                 Gostou do que viu? Faça já a sua marcação!
               </p>
               <button
-                onClick={() => window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank')}
+                onClick={() => openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty')}
                 className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all shadow-lg shadow-cyan-500/30"
               >
                 Fazer Marcação

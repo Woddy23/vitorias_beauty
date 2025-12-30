@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Sparkles, Gift, Star } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { openExternalUrl } from '../utils/security';
 
 export function PromotionPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ export function PromotionPopup() {
   };
 
   const handleBooking = () => {
-    window.open('https://you.zappysoftware.com/vitoriasbeauty', '_blank');
+    openExternalUrl('https://you.zappysoftware.com/vitoriasbeauty');
     setIsOpen(false);
   };
 
