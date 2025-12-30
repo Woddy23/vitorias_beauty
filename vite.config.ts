@@ -84,6 +84,7 @@
       outDir: 'dist',
       emptyOutDir: true,
     },
+    publicDir: 'public',
     server: {
       port: 3000,
       open: true,

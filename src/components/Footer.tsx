@@ -43,40 +43,199 @@ export function Footer() {
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-pink-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
         {/* Logo & Social - Full width on mobile */}
-        <div className="mb-8 md:mb-12 md:hidden">
+        <div className="mb-10 md:mb-12 md:hidden text-center">
           <Logo 
             size="lg"
             clickable={true}
             className="mb-6"
           />
-          <p className="text-gray-400 mb-6 leading-relaxed">
+          <p className="text-gray-400 mb-6 leading-relaxed text-sm px-2">
             Cabeleireiro e estética ao seu dispor em Lisboa. Excelência e dedicação desde 2014.
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-4 justify-center mb-16">
             <a
               href="https://www.facebook.com/share/17VVExLm5g/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-110 shadow-lg"
               aria-label="Facebook"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-6 h-6" />
             </a>
             <a
               href="https://www.instagram.com/vitorias_beauty?igsh=a21seHB1bmR1ZXpt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] hover:text-white transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] hover:text-white transition-all duration-300 hover:scale-110 shadow-lg"
               aria-label="Instagram"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-6 h-6" />
             </a>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
+        {/* Mobile: Menu and Salões side by side */}
+        <div className="grid grid-cols-2 gap-6 md:hidden mb-8">
+          {/* Menu - Mobile */}
+          <div className="pl-2">
+            <h4 className="mb-4 text-white font-semibold text-base">
+              Menu
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <button 
+                  onClick={() => handleNavigation('/', 'servicos')} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Serviços
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/equipa');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Nossa Equipa
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/galeria');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Galeria
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/contacto');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Contacto
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/sobre');
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center group text-sm"
+                >
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-pink-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Sobre Nós
+                </button>
+              </li>
+              <li>
+                <a href="https://www.miss-shampoo.pt/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-cyan-400 transition-colors flex items-center group text-sm">
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-cyan-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  Loja Online
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Salões - Mobile */}
+          <div>
+            <h4 className="mb-4 text-white font-semibold text-base">
+              Os Nossos Salões
+            </h4>
+            <ul className="space-y-4">
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/parque-nacoes'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 text-pink-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm leading-tight">Parque das Nações</p>
+                </button>
+                <div className="flex items-center gap-1.5 ml-4 text-gray-400 text-xs">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351218958421" className="hover:text-cyan-400 transition-colors">
+                    +351 218 958 421
+                  </a>
+                </div>
+              </li>
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/saldanha'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 text-pink-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm leading-tight">Saldanha</p>
+                </button>
+                <div className="flex items-center gap-1.5 ml-4 text-gray-400 text-xs">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351210987604" className="hover:text-cyan-400 transition-colors">
+                    +351 210 987 604
+                  </a>
+                </div>
+              </li>
+              <li className="group">
+                <button 
+                  onClick={() => { navigate('/portela-lrs'); window.scrollTo(0, 0); }}
+                  className="flex items-start gap-1.5 mb-1 w-full text-left"
+                >
+                  <MapPin className="w-3 h-3 text-pink-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-white group-hover:text-pink-400 transition-colors text-sm leading-tight">Portela LRS</p>
+                </button>
+                <div className="flex items-center gap-1.5 ml-4 text-gray-400 text-xs">
+                  <Phone className="w-3 h-3" />
+                  <a href="tel:+351219431654" className="hover:text-cyan-400 transition-colors">
+                    +351 219 431 654
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contacto - Mobile */}
+          <div className="col-span-2 mt-6">
+            <h4 className="mb-4 text-white font-semibold text-base">
+              Contacto
+            </h4>
+            <ul className="space-y-4">
+              <li>
+                <div className="flex items-start gap-2">
+                  <Mail className="w-4 h-4 text-pink-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-gray-400 text-xs mb-1">Email</p>
+                    <a href="mailto:vitoriasbeautygeral@gmail.com" className="text-white hover:text-pink-400 transition-colors text-xs break-all">
+                      vitoriasbeautygeral@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-start gap-2">
+                  <Clock className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-gray-400 text-xs mb-1">Horário</p>
+                    <p className="text-white text-xs">Seg - Sáb: 8h - 20h</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Desktop/Tablet: Original layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 md:gap-8 lg:gap-8">
           {/* Logo & Social - Desktop only */}
           <div className="hidden md:block">
             <Logo 
@@ -87,7 +246,7 @@ export function Footer() {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Cabeleireiro e estética ao seu dispor em Lisboa. Excelência e dedicação desde 2014.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-8">
               <a
                 href="https://www.facebook.com/share/17VVExLm5g/?mibextid=wwXIfr"
                 target="_blank"
@@ -109,12 +268,12 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Menu */}
+          {/* Menu - Desktop/Tablet */}
           <div className="lg:pl-8">
-            <h4 className="mb-4 md:mb-6 text-white">
+            <h4 className="mb-4 md:mb-6 text-white font-semibold text-base md:text-lg">
               Menu
             </h4>
-            <ul className="space-y-2 md:space-y-3">
+            <ul className="space-y-3 md:space-y-3">
               <li>
                 <button 
                   onClick={() => handleNavigation('/', 'servicos')} 
@@ -181,12 +340,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Salões */}
+          {/* Salões - Desktop/Tablet */}
           <div>
-            <h4 className="mb-4 md:mb-6 text-white">
+            <h4 className="mb-4 md:mb-6 text-white font-semibold text-base md:text-lg">
               Os Nossos Salões
             </h4>
-            <ul className="space-y-3 md:space-y-4">
+            <ul className="space-y-4 md:space-y-4">
               <li className="group">
                 <button 
                   onClick={() => { navigate('/parque-nacoes'); window.scrollTo(0, 0); }}
@@ -235,9 +394,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contacto - spans 2 cols on mobile, 1 col on desktop */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="mb-4 md:mb-6 text-white">
+          {/* Contacto - Desktop/Tablet */}
+          <div className="md:col-span-1">
+            <h4 className="mb-4 md:mb-6 text-white font-semibold text-base md:text-lg">
               Contacto
             </h4>
             <ul className="space-y-4">
@@ -266,12 +425,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-xs md:text-sm text-center md:text-left">
+        <div className="mt-20 md:mt-24 pt-8 md:pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+            <div className="text-gray-400 text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
               © {new Date().getFullYear()} Vitorias Beauty. Todos os direitos reservados.
             </div>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs sm:text-sm order-1 md:order-2">
               <button 
                 onClick={(e) => {
                   e.preventDefault();

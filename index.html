@@ -17,7 +17,8 @@
     <meta name="geo.placename" content="Lisboa" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" id="favicon" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
     <!-- Open Graph / Facebook -->
@@ -100,6 +101,61 @@
         "reviewCount": "2100"
       }
     }
+    </script>
+    <!-- Script inline para garantir favicon antes do React carregar -->
+    <script>
+      (function() {
+        function ensureFavicon() {
+          // Usar caminho absoluto completo para garantir funcionamento com HashRouter
+          const baseUrl = window.location.protocol + '//' + window.location.host;
+          const faviconPath = baseUrl + '/favicon.png';
+          
+          let favicon = document.querySelector('link[rel="icon"]');
+          if (!favicon) {
+            favicon = document.createElement('link');
+            favicon.rel = 'icon';
+            favicon.type = 'image/png';
+            favicon.href = faviconPath;
+            favicon.id = 'favicon';
+            document.head.insertBefore(favicon, document.head.firstChild);
+          } else {
+            // Forçar atualização do href
+            if (!favicon.href.includes('favicon.png')) {
+              favicon.href = faviconPath + '?v=' + Date.now();
+              setTimeout(function() {
+                favicon.href = faviconPath;
+              }, 50);
+            }
+          }
+          
+          let shortcut = document.querySelector('link[rel="shortcut icon"]');
+          if (!shortcut) {
+            shortcut = document.createElement('link');
+            shortcut.rel = 'shortcut icon';
+            shortcut.type = 'image/png';
+            shortcut.href = faviconPath;
+            document.head.insertBefore(shortcut, document.head.firstChild);
+          } else {
+            if (!shortcut.href.includes('favicon.png')) {
+              shortcut.href = faviconPath;
+            }
+          }
+        }
+        
+        // Executar imediatamente
+        ensureFavicon();
+        
+        // Re-verificar após DOM carregar
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', ensureFavicon);
+        } else {
+          // Se já carregou, verificar novamente após um pequeno delay
+          setTimeout(ensureFavicon, 100);
+        }
+        
+        // Re-verificar periodicamente
+        setInterval(ensureFavicon, 2000);
+      })();
     </script>
   </head>
 

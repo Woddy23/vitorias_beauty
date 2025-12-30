@@ -75,16 +75,22 @@ export function AppDownloadSection() {
                   href={BOOKING_LINKS.ios}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-3 bg-gradient-to-r from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 text-white rounded-xl px-8 py-5 transition-all duration-300 shadow-2xl hover:shadow-pink-500/20 hover:scale-110 border-2 border-pink-500/30 hover:border-pink-500/50 relative overflow-hidden"
+                  className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white rounded-2xl px-10 py-6 transition-all duration-300 shadow-2xl hover:shadow-pink-500/40 hover:scale-105 border-2 border-pink-500/40 hover:border-pink-500/70 overflow-hidden"
                 >
+                  {/* Animated Glow Background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-pink-500/10 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
                   {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   {/* Apple Logo */}
-                  <svg className="w-7 h-7 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="w-8 h-8 relative z-10 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                   </svg>
-                  <span className="font-bold text-xl relative z-10">App Store</span>
+                  <span className="font-bold text-xl md:text-2xl relative z-10">App Store</span>
+                  
+                  {/* Pulse effect */}
+                  <div className="absolute inset-0 rounded-2xl border-2 border-pink-500/50 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                 </a>
                 
                 <a

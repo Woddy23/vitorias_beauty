@@ -26,10 +26,12 @@ import { SaldanhaPage } from "./pages/SaldanhaPage";
 import { PortelaLRSPage } from "./pages/PortelaLRSPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ScrollToTopButton } from "./components/ScrollToTopButton";
+import { FaviconManager } from "./components/FaviconManager";
 
 export default function App() {
   return (
     <Router>
+      <FaviconManager />
       <ScrollToTop />
       <ScrollToTopButton />
       <Routes>
