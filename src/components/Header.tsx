@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logoImage from 'figma:asset/51fd73e2d92324fded4f3834fe80e72d6131ba18.png';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from './ui/sheet';
 import { openExternalUrl } from '../utils/security';
+import { Logo } from './Logo';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -124,27 +124,15 @@ export function Header() {
             >
               Galeria
             </button>
-            <button 
-              onClick={() => { navigate('/elogios'); setIsServicesOpen(false); }}
-              className="text-gray-300 hover:text-pink-400 transition-colors"
-            >
-              Elogios
-            </button>
-            <button 
-              onClick={() => { navigate('/contacto'); setIsServicesOpen(false); }}
-              className="text-gray-300 hover:text-pink-400 transition-colors"
-            >
-              Contacto
-            </button>
           </nav>
 
           {/* Logo - Center on desktop, left on mobile */}
           <div className="flex items-center justify-start md:justify-center md:px-8">
-            <img 
-              src={logoImage} 
-              alt="Vitorias Beauty" 
-              className="h-14 md:h-16 w-auto cursor-pointer"
-              onClick={() => handleNavigation('/', 'hero')}
+            <Logo 
+              size="md"
+              clickable={true}
+              scrollToSection="hero"
+              className="w-auto"
             />
           </div>
 
@@ -155,18 +143,6 @@ export function Header() {
               className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
             >
               Sobre Nós
-            </button>
-            <button 
-              onClick={() => navigate('/elogios')}
-              className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
-            >
-              Elogios
-            </button>
-            <button 
-              onClick={() => navigate('/contacto')}
-              className="text-gray-300 hover:text-pink-400 transition-colors whitespace-nowrap"
-            >
-              Contacto
             </button>
             <a 
               href="https://www.miss-shampoo.pt/"
@@ -237,18 +213,6 @@ export function Header() {
                   className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
                 >
                   Galeria
-                </button>
-                <button 
-                  onClick={() => { navigate('/elogios'); setIsMenuOpen(false); }}
-                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
-                >
-                  Elogios
-                </button>
-                <button 
-                  onClick={() => { navigate('/contacto'); setIsMenuOpen(false); }}
-                  className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
-                >
-                  Contacto
                 </button>
                 <button 
                   onClick={() => { navigate('/sobre'); setIsMenuOpen(false); }}

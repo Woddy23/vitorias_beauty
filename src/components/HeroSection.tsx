@@ -38,14 +38,16 @@ export function HeroSection() {
             Experimente a excelência em cada detalhe.
           </p>
 
-          <BookingCtas variant="primary" className="mb-6" />
-
-          <button 
-            onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-cyan-500 text-cyan-400 px-8 py-4 rounded-full hover:bg-cyan-500/10 transition-all"
-          >
-            Ver Serviços
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <BookingCtas variant="primary" className="mb-0" />
+            
+            <button 
+              onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
+              className="border-2 border-cyan-500 text-cyan-400 px-8 py-4 rounded-full hover:bg-cyan-500/10 transition-all whitespace-nowrap"
+            >
+              Ver Serviços
+            </button>
+          </div>
 
           {/* Stats with animation */}
           <div className="grid grid-cols-3 md:flex md:flex-row items-center justify-center gap-6 md:gap-16 mt-12 md:mt-16 max-w-3xl mx-auto">

@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MapPin, Mail, Phone, Clock } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logoImage from 'figma:asset/51fd73e2d92324fded4f3834fe80e72d6131ba18.png';
+import { Logo } from './Logo';
 
 export function Footer() {
   const navigate = useNavigate();
@@ -46,10 +46,10 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
         {/* Logo & Social - Full width on mobile */}
         <div className="mb-8 md:mb-12 md:hidden">
-          <img 
-            src={logoImage} 
-            alt="Vitorias Beauty" 
-            className="h-16 w-auto mb-6"
+          <Logo 
+            size="lg"
+            clickable={true}
+            className="mb-6"
           />
           <p className="text-gray-400 mb-6 leading-relaxed">
             Cabeleireiro e estética ao seu dispor em Lisboa. Excelência e dedicação desde 2014.
@@ -79,10 +79,10 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
           {/* Logo & Social - Desktop only */}
           <div className="hidden md:block">
-            <img 
-              src={logoImage} 
-              alt="Vitorias Beauty" 
-              className="h-16 w-auto mb-6"
+            <Logo 
+              size="lg"
+              clickable={true}
+              className="mb-6"
             />
             <p className="text-gray-400 mb-6 leading-relaxed">
               Cabeleireiro e estética ao seu dispor em Lisboa. Excelência e dedicação desde 2014.
